@@ -59,7 +59,7 @@ export const ProfileInfos = styled.div`
 export const GeneralInfos = styled.div`
     grid-column: 1/3;
 
-    max-width: 25rem;
+    max-width: 30rem;
 
      display: grid;
      grid-template-columns: auto auto auto;
