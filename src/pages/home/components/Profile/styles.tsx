@@ -34,7 +34,7 @@ export const ProfileInfos = styled.div`
         margin: 8px 0px;
     }
 
-    strong {
+    a {
         font-size: 0.75rem;
         color: ${props => props.theme["blue-500"]};
 

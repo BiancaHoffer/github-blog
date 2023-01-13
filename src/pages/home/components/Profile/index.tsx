@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 
-import { NavLink } from 'react-router-dom'
-
 import { GeneralInfos as GeneralInfosProfile } from "../../../../components/GeneralInfos";
 import { api } from '../../../../lib/api';
 
@@ -10,7 +8,7 @@ import { ContainerProfile, ContentProfile, GeneralInfos, ProfileInfos } from "./
 import { BsGithub } from 'react-icons/bs';
 import { FaBuilding } from 'react-icons/fa';
 import { BsPeopleFill } from 'react-icons/bs';
-import { ArrowSquareOut, Strategy } from "phosphor-react";
+import { ArrowSquareOut } from "phosphor-react";
 
 
 interface DataUser {
@@ -26,14 +24,21 @@ interface DataUser {
 
 export function Profile() {
     const [user, setUser] = useState<DataUser>();
-    //const [loading, setLoading] = useState('Carregando')
 
     async function getDataUser() {
         try {
             const response = await api.get("users/biancahoffer");
             const data = response.data;
 
-            const { avatar_url, name, bio, login, company, followers, html_url } = data;
+            const {
+                avatar_url,
+                name,
+                bio,
+                login,
+                company,
+                followers,
+                html_url
+            } = data;
 
             const dataUser = {
                 avatar: avatar_url,
@@ -63,10 +68,10 @@ export function Profile() {
                 <img src={user?.avatar} alt="avatar" />
                 <ProfileInfos>
                     <h1>{user?.name}</h1>
-                    <NavLink to={JSON.stringify(user?.link)}>
+                    <a href={user?.link} target="_blank">
                         GitHub
                         <ArrowSquareOut size={15} color="#3294F8" />
-                    </NavLink>
+                    </a>
                     <p>{user?.bio}</p>
 
                     <GeneralInfos>
