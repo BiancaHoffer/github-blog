@@ -6,7 +6,7 @@ export const ContainerCartPost = styled(NavLink)`
     padding: 2rem;
 
     display: grid;
-    grid-template-columns: auto 4rem;
+    grid-template-columns: auto auto;
     gap: 16px;
 
     border-radius: 10px;
@@ -25,11 +25,21 @@ export const ContainerCartPost = styled(NavLink)`
     p {
         grid-column: 1/3;
         text-align: justify;
-        color: ${props => props.theme["blue-150"]}
+        color: ${props => props.theme["blue-150"]};
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        line-height: 1.8rem;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
     }
 
     time {
         color: ${props => props.theme["blue-200"]};
         font-size: 0.875rem;
+
+        display: flex;
+        justify-content: end;
     }
 `

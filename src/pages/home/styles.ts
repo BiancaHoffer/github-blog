@@ -31,7 +31,12 @@ export const ContainerSearch = styled.div`
         color: ${props => props.theme["blue-200"]};
     }
 
+    form {
+        grid-column: 1/3;
+    }
+
     input {
+        width: 100%;
         grid-column: 1/3;
         background-color: ${props => props.theme["blue-950"]};
         padding: 12px 16px;

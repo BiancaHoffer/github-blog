@@ -1,14 +1,17 @@
+import { Posts } from "../..";
+import { dateFormatter } from "../../../../utils/formatter";
 import { ContainerCartPost } from "./styles";
 
-export function CardPost() {
+interface CardPostProps {
+    post: Posts
+}
+
+export function CardPost({ post }: CardPostProps) {
     return (
-        <ContainerCartPost to={"/a"}>
-            <h1>JavaScript data types and data structures</h1>
-            <time>Há 1 dia</time>
-            <p>
-                Programming languages all have built-in data structures, but these often differ from one
-                language to another. This article attempts to list the built-in data structures available in
-            </p>
+        <ContainerCartPost to={`/post/${post.number}`}>
+            <h1>{post.title}</h1>
+            <time>{dateFormatter(post.updated_at)}</time>
+            <p>{post.body}</p>
         </ContainerCartPost>
     )
 }
