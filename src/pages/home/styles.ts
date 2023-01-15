@@ -39,7 +39,7 @@ export const ContainerPublications = styled.div`
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
 
-
+    
    // @media () {}
     //padding: 0rem 2.5rem;
 `

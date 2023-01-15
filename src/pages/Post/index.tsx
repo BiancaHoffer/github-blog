@@ -19,24 +19,38 @@ const repo = import.meta.env.VITE_GITHUB_REPO
 
 export function Post() {
     const [post, setPost] = useState<Post>({} as Post);
+    const [loading, setLoading] = useState(false);
 
     const { id } = useParams();
 
     async function getPost() {
+        try {
+            setLoading(true)
+            const response = await api.get(`repos/${username}/${repo}/issues/${id}`)
 
-        const response = await api.get(`repos/${username}/${repo}/issues/${id}`)
-        const { title, body, created_at, comments, html_url, user } = response.data;
+            const {
+                title,
+                body,
+                created_at,
+                comments,
+                html_url,
+                user
+            } = response.data;
 
-        const dataPost = {
-            title,
-            created_at,
-            body,
-            comments,
-            link: html_url,
-            login: user.login
+            const dataPost = {
+                title,
+                created_at,
+                body,
+                comments,
+                link: html_url,
+                login: user.login
+            }
+
+            setPost(dataPost)
+        } finally {
+            setLoading(false)
         }
 
-        setPost(dataPost)
     }
 
     useEffect(() => {
@@ -45,7 +59,7 @@ export function Post() {
 
     return (
         <Main>
-            <HeaderPost postData={post} />
+            <HeaderPost postData={post} statusLoading={loading} />
 
             <ContainerPost>
                 <ReactMarkdown>

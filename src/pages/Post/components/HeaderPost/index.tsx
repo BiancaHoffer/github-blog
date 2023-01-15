@@ -1,5 +1,5 @@
 import { GeneralInfos as GeneralInfosPost } from '../../../../components/GeneralInfos'
-import { ContainerHeaderPost, AreaButtons, GeneralInfos } from "./styles";
+import { ContainerHeaderPost, AreaButtons, GeneralInfos, ContainerLoading } from "./styles";
 import { NavLink } from 'react-router-dom';
 import { IoIosArrowBack } from 'react-icons/io';
 import { ArrowSquareOut } from 'phosphor-react'
@@ -8,12 +8,22 @@ import { BsFillCalendarEventFill } from "react-icons/bs";
 import { FaComment } from 'react-icons/fa';
 import { Post } from '../..';
 import { dateFormatter } from '../../../../utils/formatter';
+import { Loading } from '../../../../components/Loading';
 
 interface HeaderPostProps {
     postData: Post;
+    statusLoading: boolean;
 }
 
-export function HeaderPost({ postData }: HeaderPostProps) {
+export function HeaderPost({ postData, statusLoading }: HeaderPostProps) {
+    if (statusLoading) {
+        return (
+            <ContainerLoading>
+                <Loading width={200} />
+            </ContainerLoading>
+        )
+
+    }
     return (
         <ContainerHeaderPost>
             <AreaButtons>
@@ -48,8 +58,6 @@ export function HeaderPost({ postData }: HeaderPostProps) {
                     icon={<FaComment size={18} />}
                 />
             </GeneralInfos>
-
-
         </ContainerHeaderPost>
     )
 }

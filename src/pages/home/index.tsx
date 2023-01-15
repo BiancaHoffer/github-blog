@@ -7,6 +7,7 @@ import { ContainerPublications, ContainerSearch, Main } from "./styles";
 
 import { api } from "../../lib/api";
 import { Search } from './components/Search';
+import { Loading } from '../../components/Loading';
 
 export interface Posts {
   title: string;
@@ -20,10 +21,17 @@ const repo = import.meta.env.VITE_GITHUB_REPO
 
 export function Home() {
   const [posts, setPosts] = useState<Posts[]>([])
+  const [loading, setLoading] = useState(false);
 
   async function getPosts(query: string = "") {
-    const response = await api.get(`search/issues?q=${query}%20repo:${username}/${repo}`)
-    setPosts(response.data.items);
+    try {
+      setLoading(true);
+      const response = await api.get(`search/issues?q=${query}%20repo:${username}/${repo}`)
+      setPosts(response.data.items);
+    } finally {
+      setLoading(false);
+    }
+
   }
 
   useEffect(() => {
@@ -50,6 +58,7 @@ export function Home() {
             <CardPost
               key={post.number}
               post={post}
+              statusLoading={loading}
             />
 
           )
