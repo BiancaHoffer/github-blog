@@ -21,13 +21,14 @@ interface DataUser {
     link: string;
 }
 
+const username = import.meta.env.VITE_GITHUB_USERNAME
 
 export function Profile() {
-    const [user, setUser] = useState<DataUser>();
+    const [user, setUser] = useState<DataUser>({} as DataUser);
 
     async function getDataUser() {
         try {
-            const response = await api.get("users/biancahoffer");
+            const response = await api.get(`users/${username}`);
             const data = response.data;
 
             const {

@@ -3,12 +3,17 @@ import { ContainerHeaderPost, AreaButtons, GeneralInfos } from "./styles";
 import { NavLink } from 'react-router-dom';
 import { IoIosArrowBack } from 'react-icons/io';
 import { ArrowSquareOut } from 'phosphor-react'
-import { ContainerGeneralInfosProfile } from "../../../../components/GeneralInfos/styles";
 import { BsGithub } from 'react-icons/bs';
 import { BsFillCalendarEventFill } from "react-icons/bs";
 import { FaComment } from 'react-icons/fa';
+import { Post } from '../..';
+import { dateFormatter } from '../../../../utils/formatter';
 
-export function HeaderPost() {
+interface HeaderPostProps {
+    postData: Post;
+}
+
+export function HeaderPost({ postData }: HeaderPostProps) {
     return (
         <ContainerHeaderPost>
             <AreaButtons>
@@ -17,20 +22,31 @@ export function HeaderPost() {
                     Voltar
                 </NavLink>
 
-                <NavLink to={"#"}>
+                <a href={postData.link} target="_blank">
                     Ver no GitHub
                     <ArrowSquareOut size={15} />
-                </NavLink>
+                </a>
             </AreaButtons>
 
             <h1>
-                JavaScript data types and data structures
+                {postData.title}
             </h1>
 
             <GeneralInfos>
-                <GeneralInfosPost title='cameronwll' icon={<BsGithub size={18} />} />
-                <GeneralInfosPost title='Há 1 dia' icon={<BsFillCalendarEventFill size={18} />} />
-                <GeneralInfosPost title='5 comentários' icon={<FaComment size={18} />} />
+                <GeneralInfosPost
+                    title={postData.login}
+                    icon={<BsGithub size={18} />}
+                />
+                <GeneralInfosPost
+                    title={dateFormatter(postData.created_at)}
+                    icon={<BsFillCalendarEventFill size={18} />}
+                />
+                <GeneralInfosPost
+                    title={postData.comments == 1 ?
+                        `${postData.comments} comentário ` : `${postData.comments} comentários`
+                    }
+                    icon={<FaComment size={18} />}
+                />
             </GeneralInfos>
 
 

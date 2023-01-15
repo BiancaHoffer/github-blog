@@ -15,22 +15,19 @@ export interface Posts {
   number: number;
 }
 
-const username = "biancahoffer" // criar cheve
-const repo = "github-blog" // criar cheve
+const username = import.meta.env.VITE_GITHUB_USERNAME
+const repo = import.meta.env.VITE_GITHUB_REPO
 
 export function Home() {
   const [posts, setPosts] = useState<Posts[]>([])
-  const [totalPosts, setTotalPosts] = useState<number>(0);
 
   async function getPosts(query: string = "") {
     const response = await api.get(`search/issues?q=${query}%20repo:${username}/${repo}`)
     setPosts(response.data.items);
-    setTotalPosts(response.data.total_count)
   }
 
-
   useEffect(() => {
-    getPosts()
+    getPosts();
   }, [])
 
 
@@ -41,7 +38,8 @@ export function Home() {
       <ContainerSearch>
         <p>Publicações</p>
         <p>
-          {totalPosts == 1 ? `${totalPosts} publicação ` : `${totalPosts} publicações`}
+          {posts.length == 1 ?
+            `${posts.length} publicação ` : `${posts.length} publicações`}
         </p>
         <Search getPosts={getPosts} />
       </ContainerSearch>

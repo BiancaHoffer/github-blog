@@ -14,6 +14,11 @@ export const ContainerPost = styled.div`
     
     p {
         text-align: justify;
-        color: ${props => props.theme["blue-150"]}
+        color: ${props => props.theme["blue-150"]};
+        margin-bottom: 1rem;
+    }
+
+    a {
+        color: ${props => props.theme["blue-500"]}
     }
 `
