@@ -31,7 +31,6 @@ export function Home() {
     } finally {
       setLoading(false);
     }
-
   }
 
   useEffect(() => {
@@ -51,6 +50,8 @@ export function Home() {
         </p>
         <Search getPosts={getPosts} />
       </ContainerSearch>
+
+      {posts.length === 0 ? <p>Nenhum post encontrado :(</p> : <></>}
 
       <ContainerPublications>
         {posts.map(post => {
