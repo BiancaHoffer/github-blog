@@ -19,7 +19,7 @@ export function CardPost({ post, statusLoading }: CardPostProps) {
     return (
         <ContainerCartPost to={`/post/${post.number}`}>
             <h1>{post.title}</h1>
-            <time>{dateFormatter(post.updated_at)}</time>
+            <time>Última atualização {dateFormatter(post.updated_at)}</time>
             <p>{post.body}</p>
         </ContainerCartPost>
     )

@@ -7,6 +7,7 @@ import { ContainerPublications, ContainerSearch, Main } from "./styles";
 
 import { api } from "../../lib/api";
 import { Search } from './components/Search';
+import { LoadingHeader } from '../../components/LoadingHeader';
 
 export interface Posts {
   title: string;
@@ -51,7 +52,7 @@ export function Home() {
         <Search getPosts={getPosts} />
       </ContainerSearch>
 
-      {posts.length === 0 ? <p>Nenhum post encontrado :(</p> : <></>}
+
 
       <ContainerPublications>
         {posts.map(post => {

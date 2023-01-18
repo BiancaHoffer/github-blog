@@ -36,7 +36,7 @@ export const AreaButtons = styled.div`
 `
 
 export const GeneralInfos = styled.div`
- max-width: 25rem;
+ max-width: 30rem;
 
  display: grid;
  grid-template-columns: auto auto auto;
