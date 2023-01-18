@@ -38,4 +38,23 @@ export const ContainerLoadingHeaderPost = styled.div`
     }
   }
 
+    // responsiveness
+    @media (max-width: 600px) {
+      .contentbuttons {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: center;
+      }
+
+      .contentinfos {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .title {
+        margin: 1.5rem;
+      }
+        
+    }
 `

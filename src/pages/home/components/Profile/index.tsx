@@ -58,7 +58,7 @@ export function Profile() {
             setUser(dataUser);
 
         } finally {
-            setLoading(false);
+            setLoading(true);
         }
 
     }

@@ -14,13 +14,21 @@ export const ContentLoadingProfile = styled.div`
     display: flex;
     justify-content: center;
     gap: 2rem;
-    
+
+    // responsiveness
+    @media (max-width: 600px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 `;
 
 export const ContentPhotoShimmer = styled.div`
   border-radius: 6px;
+
   .photo {
     min-width: 9.25rem;
+    max-width: 9.25rem;
     height: 9.25rem;
     border-radius: 6px;
   }
@@ -33,30 +41,49 @@ export const ContentInfosProfileShimmer = styled.div`
 
   .name {
     height: 1.5rem;
-    width: 15rem;
+    max-width: 15rem;
     border-radius: 4px;
   }
 
   .containerbutton {
     height: 1rem;
+    max-width: 100%;
     display: flex;
     border-radius: 4px;
     justify-content: end;
   }
 
   .button {
-    width: 6rem;
+    width: 5rem;
     border-radius: 4px;
   }
 
   .bio {
     height: 1rem;
+    max-width: 100%;
     grid-column: 1/3;
     border-radius: 4px;
   }
 
   div:nth-child(4) {
-    width: 25rem;
+    max-width: 25rem;
+  }
+
+  // responsiveness
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .name {
+      min-width: 60%;
+      margin: 1rem 0rem;
+    }
+
+    .bio {
+      min-width: 100%;
+      margin-top: 0.8rem;
+    }
   }
 
 `
@@ -74,4 +101,17 @@ export const ContentGeneralInfosShimmer = styled.div`
     border-radius: 4px;
   }
 
+   // responsiveness
+   @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 60%;
+    gap: 16px;
+    margin-top: 1rem;
+    
+    .infos {
+      min-width: 100%;
+    }
+  }
 `
