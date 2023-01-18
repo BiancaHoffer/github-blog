@@ -33,6 +33,13 @@ export const AreaButtons = styled.div`
         text-transform: uppercase;
     }
 
+    @media (max-width: 370px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 8px
+    } 
+
 `
 
 export const GeneralInfos = styled.div`
@@ -44,16 +51,14 @@ export const GeneralInfos = styled.div`
 
  justify-items: start;
 
- @media (max-width: 680px) {
+ @media (max-width: 600px) {
     grid-template-columns: auto auto;
     gap: 12px;
-    justify-items: start;
  }
 
-/* @media (max-width: 514px) {
+@media (max-width: 514px) {
     grid-template-columns: auto;
     gap: 12px;
-    justify-items: center;
- }    */
+ } 
 
 `;
