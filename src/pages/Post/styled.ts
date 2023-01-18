@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 export const Main = styled.main`
     width: 100%;
-    max-width: 54rem;
+    max-width: 56.5rem;
     margin: 0 auto;
 
     padding-bottom: 10rem;
+    padding: 0rem 2.5rem 2rem 2.5rem;
 `;
 
 export const ContainerPost = styled.div`

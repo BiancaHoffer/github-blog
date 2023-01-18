@@ -16,13 +16,14 @@ export const ContainerLoadingHeaderPost = styled.div`
 
   .button {
     width: 6rem;
-    height: 1.5rem;
+    height: 1rem;
+    border-radius: 4px;
   } 
 
   .title {
     width: 90%;
     height: 1.5rem;
-
+    border-radius: 4px;
     margin: 1.25rem 0rem 0.5rem 0rem;
   }
 
@@ -32,7 +33,8 @@ export const ContainerLoadingHeaderPost = styled.div`
 
     .infos {
         width: 8rem;
-        height: 1.5rem;
+        height: 1rem;
+        border-radius: 4px;
     }
   }
 

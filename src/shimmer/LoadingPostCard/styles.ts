@@ -25,11 +25,12 @@ export const ContainerLoadingPostCard = styled.div`
     .title {
         height: 1.5rem;
         margin-bottom: 0.7rem;
+        border-radius: 4px;
     }
 
     .content-data {
         width: 100%;
-        height: 1.5rem;
+        height: 1rem;
 
         display: flex;
         justify-content: end;
@@ -38,7 +39,8 @@ export const ContainerLoadingPostCard = styled.div`
 
     .data {
         width: 4rem;
-        height: 1.5rem;
+        height: 1rem;
+        border-radius: 4px;
     }
 
     .content-text {
@@ -47,8 +49,9 @@ export const ContainerLoadingPostCard = styled.div`
 
     .text {
         width: 100%;
-        height: 1.5rem;
+        height: 1rem;
         margin-bottom: 0.7rem;
         margin-top: 1rem;
+        border-radius: 4px;
     }
 `

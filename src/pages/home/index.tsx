@@ -7,7 +7,6 @@ import { ContainerPublications, ContainerSearch, Main } from "./styles";
 
 import { api } from "../../lib/api";
 import { Search } from './components/Search';
-import { LoadingHeader } from '../../components/LoadingHeader';
 
 export interface Posts {
   title: string;
@@ -26,7 +25,9 @@ export function Home() {
   async function getPosts(query: string = "") {
     try {
       setLoading(true);
-      const response = await api.get(`search/issues?q=${query}%20repo:${username}/${repo}`)
+
+      const response = await api.get(`search/issues?q=${query}%20repo:${username}/${repo}`);
+
       setPosts(response.data.items);
 
     } finally {
@@ -51,8 +52,6 @@ export function Home() {
         </p>
         <Search getPosts={getPosts} />
       </ContainerSearch>
-
-
 
       <ContainerPublications>
         {posts.map(post => {

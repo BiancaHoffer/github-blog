@@ -4,13 +4,12 @@ import { NavLink } from "react-router-dom";
 export const ContainerCartPost = styled(NavLink)`
     background-color: ${props => props.theme["blue-780"]};
     padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.48);
 
     display: grid;
     grid-template-columns: auto auto;
     gap: 16px;
-
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.48);
 
     :hover {
         opacity: 0.8;
@@ -42,10 +41,21 @@ export const ContainerCartPost = styled(NavLink)`
         display: flex;
         justify-content: end;
     }
-`
 
-export const ContainerLoading = styled.div`
-    width: 100%;
-    align-items: center;
-    justify-content: center;
+    //responsiveness
+    @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            grid-column: 1/1;
+        }
+
+        time {
+            justify-content: center;
+        }
+    }
 `

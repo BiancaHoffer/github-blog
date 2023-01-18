@@ -1,7 +1,6 @@
 import { Posts } from "../..";
 import { LoadingPostCard } from "../../../../shimmer/LoadingPostCard";
 import { dateFormatter } from "../../../../utils/formatter";
-import { LoadingCardPost } from "../LoadingCardPost";
 import { ContainerCartPost } from "./styles";
 
 interface CardPostProps {

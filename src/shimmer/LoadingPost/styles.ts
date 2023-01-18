@@ -5,9 +5,10 @@ export const ContainerLoadingPost = styled.div`
     margin-bottom: 3rem;
 
     .text {
-        height: 1.5rem;
+        height: 1rem;
         width: 100%;
         margin-bottom: 0.7rem;
+        border-radius: 4px;
     }
 
     .text:nth-child(6n) {

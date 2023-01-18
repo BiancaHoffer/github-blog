@@ -2,10 +2,12 @@ import styled from "styled-components";
 
 export const Main = styled.main`
     width: 100%;
-    max-width: 54rem;
+    max-width: 56.5rem;
     margin: 0 auto;
 
     padding-bottom: 10rem;
+    
+    padding: 0rem 2.5rem 2rem 2.5rem;
 `;
 
 export const ContainerSearch = styled.div`
@@ -39,7 +41,8 @@ export const ContainerPublications = styled.div`
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
 
-    
-   // @media () {}
-    //padding: 0rem 2.5rem;
+    //responsiveness
+   @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+   }
 `

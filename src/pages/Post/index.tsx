@@ -27,8 +27,9 @@ export function Post() {
 
     async function getPost() {
         try {
-            setLoading(true)
-            const response = await api.get(`repos/${username}/${repo}/issues/${id}`)
+            setLoading(true);
+
+            const response = await api.get(`repos/${username}/${repo}/issues/${id}`);
 
             const {
                 title,
