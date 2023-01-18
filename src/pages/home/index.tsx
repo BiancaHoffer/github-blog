@@ -31,7 +31,7 @@ export function Home() {
       setPosts(response.data.items);
 
     } finally {
-      setLoading(true);
+      setLoading(false);
     }
   }
 
