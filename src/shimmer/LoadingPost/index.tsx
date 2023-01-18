@@ -1,5 +1,20 @@
-export function LoadindPost() {
+import Skeleton from "../../Skeleton";
+import { ContainerLoadingPost } from "./styles";
+
+export function LoadigndPost() {
     return (
-        <h1>LoadindHeaderPost</h1>
+        <ContainerLoadingPost>
+            <div>
+                <Skeleton className="text" />
+                <Skeleton className="text" />
+                <Skeleton className="text" />
+                <Skeleton className="text" />
+                <Skeleton className="text" />
+                <Skeleton className="text" />
+                <Skeleton className="text" />
+                <Skeleton className="text" />
+                <Skeleton className="text" />
+            </div>
+        </ContainerLoadingPost>
     )
 }

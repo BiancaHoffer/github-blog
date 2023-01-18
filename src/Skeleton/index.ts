@@ -3,9 +3,9 @@ import styled from "styled-components";
 export default styled.div`
     background-image: linear-gradient(
     -90deg,
-    #787878 0%,
-    #404040 50%,
-    #787878 100%
+    #A8A8A8 0%,
+    #484848 50%,
+    #A8A8A8 100%
   );
 
   background-size: 400% 400%;

@@ -4,6 +4,8 @@ import { api } from "../../lib/api";
 import { HeaderPost } from "./components/HeaderPost";
 import { Main, ContainerPost } from "./styled";
 import ReactMarkdown from 'react-markdown'
+import { LoadingPostCard } from "../../shimmer/LoadingPostCard";
+import { LoadigndPost } from "../../shimmer/LoadingPost";
 
 export interface Post {
     title: string;
@@ -48,7 +50,7 @@ export function Post() {
 
             setPost(dataPost)
         } finally {
-            setLoading(true)
+            setLoading(false)
         }
 
     }
@@ -61,11 +63,15 @@ export function Post() {
         <Main>
             <HeaderPost postData={post} statusLoading={loading} />
 
-            <ContainerPost>
-                <ReactMarkdown>
-                    {post.body}
-                </ReactMarkdown>
-            </ContainerPost>
+            {loading === true ? (
+                <LoadigndPost />
+            ) : (
+                <ContainerPost>
+                    <ReactMarkdown>
+                        {post.body}
+                    </ReactMarkdown>
+                </ContainerPost>
+            )}
         </Main>
     )
 }

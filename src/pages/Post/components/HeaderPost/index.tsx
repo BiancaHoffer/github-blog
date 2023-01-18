@@ -1,5 +1,5 @@
 import { GeneralInfos as GeneralInfosPost } from '../../../../components/GeneralInfos'
-import { ContainerHeaderPost, AreaButtons, GeneralInfos, ContainerLoading } from "./styles";
+import { ContainerHeaderPost, AreaButtons, GeneralInfos } from "./styles";
 import { NavLink } from 'react-router-dom';
 import { IoIosArrowBack } from 'react-icons/io';
 import { ArrowSquareOut } from 'phosphor-react'
@@ -8,7 +8,7 @@ import { BsFillCalendarEventFill } from "react-icons/bs";
 import { FaComment } from 'react-icons/fa';
 import { Post } from '../..';
 import { dateFormatter } from '../../../../utils/formatter';
-import { LoadingHeader } from '../../../../components/LoadingHeader';
+import { LoadingHeaderPost } from '../../../../shimmer/LoadingHeaderPost';
 
 interface HeaderPostProps {
     postData: Post;
@@ -17,9 +17,7 @@ interface HeaderPostProps {
 
 export function HeaderPost({ postData, statusLoading }: HeaderPostProps) {
     if (statusLoading) {
-        return (
-            <LoadingHeader />
-        )
+        return <LoadingHeaderPost />
 
     }
     return (
