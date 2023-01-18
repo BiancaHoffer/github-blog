@@ -1,11 +1,7 @@
 import BarLoader from "react-spinners/BarLoader";
 import { ContainerLoading } from "./styles";
 
-interface LoadingProps {
-    width: number;
-}
-
-export function Loading({ width }: LoadingProps) {
+export function LoadingHeader() {
     return (
         <ContainerLoading>
             <BarLoader
@@ -13,10 +9,9 @@ export function Loading({ width }: LoadingProps) {
                 aria-label="Loading Spinner"
                 data-testid="loader"
                 className="spinner"
-                width={width}
+                width={200}
             />
         </ContainerLoading>
-
     )
 }
 

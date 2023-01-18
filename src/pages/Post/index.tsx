@@ -48,7 +48,7 @@ export function Post() {
 
             setPost(dataPost)
         } finally {
-            setLoading(false)
+            setLoading(true)
         }
 
     }

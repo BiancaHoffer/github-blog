@@ -7,7 +7,6 @@ import { ContainerPublications, ContainerSearch, Main } from "./styles";
 
 import { api } from "../../lib/api";
 import { Search } from './components/Search';
-import { Loading } from '../../components/Loading';
 
 export interface Posts {
   title: string;
@@ -28,8 +27,9 @@ export function Home() {
       setLoading(true);
       const response = await api.get(`search/issues?q=${query}%20repo:${username}/${repo}`)
       setPosts(response.data.items);
+
     } finally {
-      setLoading(false);
+      setLoading(true);
     }
 
   }

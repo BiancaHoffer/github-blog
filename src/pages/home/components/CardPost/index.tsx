@@ -1,7 +1,7 @@
 import { Posts } from "../..";
-import { Loading } from "../../../../components/Loading";
 import { dateFormatter } from "../../../../utils/formatter";
-import { ContainerCartPost, ContainerLoading } from "./styles";
+import { LoadingCardPost } from "../LoadingCardPost";
+import { ContainerCartPost } from "./styles";
 
 interface CardPostProps {
     post: Posts;
@@ -11,10 +11,7 @@ interface CardPostProps {
 export function CardPost({ post, statusLoading }: CardPostProps) {
     if (statusLoading) {
         return (
-            <ContainerLoading>
-                <Loading width={180} />
-            </ContainerLoading>
-
+            <LoadingCardPost />
         )
     }
 
@@ -26,3 +23,4 @@ export function CardPost({ post, statusLoading }: CardPostProps) {
         </ContainerCartPost>
     )
 }
+

@@ -8,7 +8,7 @@ import { BsFillCalendarEventFill } from "react-icons/bs";
 import { FaComment } from 'react-icons/fa';
 import { Post } from '../..';
 import { dateFormatter } from '../../../../utils/formatter';
-import { Loading } from '../../../../components/Loading';
+import { LoadingHeader } from '../../../../components/LoadingHeader';
 
 interface HeaderPostProps {
     postData: Post;
@@ -18,9 +18,7 @@ interface HeaderPostProps {
 export function HeaderPost({ postData, statusLoading }: HeaderPostProps) {
     if (statusLoading) {
         return (
-            <ContainerLoading>
-                <Loading width={200} />
-            </ContainerLoading>
+            <LoadingHeader />
         )
 
     }

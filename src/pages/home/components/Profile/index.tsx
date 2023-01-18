@@ -9,7 +9,8 @@ import { BsGithub } from 'react-icons/bs';
 import { FaBuilding } from 'react-icons/fa';
 import { BsPeopleFill } from 'react-icons/bs';
 import { ArrowSquareOut } from "phosphor-react";
-import { Loading } from '../../../../components/Loading';
+import { LoadingHeader } from '../../../../components/LoadingHeader';
+import { LoadindHeaderProfile } from '../../../../shimmer/LoadingHeaderProfile';
 
 
 interface DataUser {
@@ -66,40 +67,38 @@ export function Profile() {
         getDataUser();
     }, [])
 
+    if (loading) {
+        return <LoadindHeaderProfile />
+    }
+
     return (
         <ContainerProfile>
-            {loading === true ? (
-                <Loading width={200} />
-            )
-                :
+            <ContentProfile>
+                <img src={user?.avatar} alt="avatar" />
+                <ProfileInfos>
+                    <h1>{user?.name}</h1>
+                    <a href={user?.link} target="_blank">
+                        GitHub
+                        <ArrowSquareOut size={15} color="#3294F8" />
+                    </a>
+                    <p>{user?.bio}</p>
 
-                <ContentProfile>
-                    <img src={user?.avatar} alt="avatar" />
-                    <ProfileInfos>
-                        <h1>{user?.name}</h1>
-                        <a href={user?.link} target="_blank">
-                            GitHub
-                            <ArrowSquareOut size={15} color="#3294F8" />
-                        </a>
-                        <p>{user?.bio}</p>
-
-                        <GeneralInfos>
-                            <GeneralInfosProfile
-                                title={user?.login}
-                                icon={<BsGithub size={18} />}
-                            />
-                            <GeneralInfosProfile
-                                title={user?.company}
-                                icon={<FaBuilding size={18} />}
-                            />
-                            <GeneralInfosProfile
-                                title={`${user?.followers} seguidores`}
-                                icon={<BsPeopleFill size={18} />}
-                            />
-                        </GeneralInfos>
-                    </ProfileInfos>
-                </ContentProfile>
-            }
+                    <GeneralInfos>
+                        <GeneralInfosProfile
+                            title={user?.login}
+                            icon={<BsGithub size={18} />}
+                        />
+                        <GeneralInfosProfile
+                            title={user?.company}
+                            icon={<FaBuilding size={18} />}
+                        />
+                        <GeneralInfosProfile
+                            title={`${user?.followers} seguidores`}
+                            icon={<BsPeopleFill size={18} />}
+                        />
+                    </GeneralInfos>
+                </ProfileInfos>
+            </ContentProfile>
         </ContainerProfile>
     )
 }
