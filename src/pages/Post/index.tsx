@@ -4,7 +4,6 @@ import { api } from "../../lib/api";
 import { HeaderPost } from "./components/HeaderPost";
 import { Main, ContainerPost } from "./styled";
 import ReactMarkdown from 'react-markdown'
-import { LoadingPostCard } from "../../shimmer/LoadingPostCard";
 import { LoadigndPost } from "../../shimmer/LoadingPost";
 
 export interface Post {
