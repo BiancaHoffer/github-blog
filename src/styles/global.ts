@@ -6,15 +6,27 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
     }
+
+    html {
+        @media (max-width: 900px) {
+            font-size: 93.75%; //15px
+        }
+        @media (max-width: 600px) {
+            font-size: 87.5%; //14px
+        }
+    }
+
     body {
         background-color: ${props => props.theme['blue-900']};
     }
+
     body, input, textarea, button  {
         font-family: 'Nunito', sans-serif;
         font-weight: 400;
         color: ${props => props.theme.white};
         font-size: 1rem;
     }
+
     a {
         text-decoration: none;
     }
