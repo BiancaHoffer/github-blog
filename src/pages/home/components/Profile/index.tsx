@@ -9,7 +9,6 @@ import { BsGithub } from 'react-icons/bs';
 import { FaBuilding } from 'react-icons/fa';
 import { BsPeopleFill } from 'react-icons/bs';
 import { ArrowSquareOut } from "phosphor-react";
-import { LoadingHeader } from '../../../../components/LoadingHeader';
 import { LoadindHeaderProfile } from '../../../../shimmer/LoadingHeaderProfile';
 
 
